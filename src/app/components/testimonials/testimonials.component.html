@@ -1,0 +1,51 @@
+<section id="depoimentos" class="w-full py-20 md:py-32">
+  <div class="container px-4 md:px-6">
+    <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+      <div class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 h-3.5 w-3.5">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span>Depoimentos</span>
+      </div>
+      <h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight max-w-[800px]">
+        O que nossos clientes dizem
+      </h2>
+      <p class="max-w-[700px] text-muted-foreground md:text-lg">
+        A satisfação de nossos clientes é o nosso maior reconhecimento.
+      </p>
+    </div>
+    <div class="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+      <div class="group relative" *ngFor="let testimonial of testimonials">
+        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/20 via-primary/10 to-transparent opacity-70 blur-sm transition-all group-hover:opacity-100"></div>
+        <app-card class="relative bg-background/80 backdrop-blur-sm border-primary/10 shadow-md">
+          <app-card-header>
+            <div class="flex items-center gap-4">
+              <div class="relative">
+                <div class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary/30 to-primary/20 blur-sm"></div>
+                <img
+                  src="assets/images/avatar-placeholder.jpg"
+                  alt="{{ testimonial.name }}"
+                  class="relative rounded-full border-2 border-background w-[60px] h-[60px]"
+                />
+              </div>
+              <div>
+                <app-card-title class="text-lg">{{ testimonial.name }}</app-card-title>
+                <app-card-description>{{ testimonial.since }}</app-card-description>
+              </div>
+              <div class="ml-auto text-4xl text-primary/20">"</div>
+            </div>
+          </app-card-header>
+          <app-card-content>
+            <p class="text-muted-foreground italic">
+              {{ testimonial.text }}
+            </p>
+          </app-card-content>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</section>
+

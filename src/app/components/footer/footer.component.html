@@ -1,0 +1,92 @@
+<footer class="w-full border-t border-primary/10 bg-background py-12 md:py-16">
+  <div class="container px-4 md:px-6">
+    <div class="flex flex-col items-center justify-center gap-8 md:flex-row md:justify-between">
+      <div class="flex flex-col items-center gap-4 md:items-start md:gap-2">
+        <div class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-primary">
+            <path d="M12 3c1.2 0 2.4.6 3 1.5a3.6 3.6 0 0 1 3 3c0 1.2-.6 2.4-1.5 3 .9.6 1.5 1.8 1.5 3a3.6 3.6 0 0 1-3 3c-.6.9-1.8 1.5-3 1.5s-2.4-.6-3-1.5a3.6 3.6 0 0 1-3-3c0-1.2.6-2.4 1.5-3-.9-.6-1.5-1.8-1.5-3a3.6 3.6 0 0 1 3-3c.6-.9 1.8-1.5 3-1.5z"></path>
+            <path d="M12 8v8"></path>
+            <path d="M8 12h8"></path>
+            <path d="M18.2 14.2 20 16"></path>
+            <path d="M4 6l1.8 1.8"></path>
+            <path d="M4 16l1.8-1.8"></path>
+            <path d="M18.2 9.8 20 8"></path>
+          </svg>
+          <span class="text-2xl font-bold tracking-tight">Juris Consulta</span>
+        </div>
+        <p class="text-center text-sm text-muted-foreground md:text-left">
+          &copy; {{ currentYear }} Juris Consulta Advogados Associados. Todos os direitos reservados.
+        </p>
+        <p class="text-center text-xs text-muted-foreground md:text-left">
+          OAB/SP 12.345
+        </p>
+      </div>
+      <div class="grid grid-cols-2 gap-10 sm:grid-cols-4">
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium">Serviços</h3>
+          <ul class="space-y-2">
+            <li *ngFor="let link of footerLinks.services">
+              <a [href]="link.href" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium">Empresa</h3>
+          <ul class="space-y-2">
+            <li *ngFor="let link of footerLinks.company">
+              <a [href]="link.href" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium">Recursos</h3>
+          <ul class="space-y-2">
+            <li *ngFor="let link of footerLinks.resources">
+              <a [href]="link.href" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-3">
+          <h3 class="text-sm font-medium">Legal</h3>
+          <ul class="space-y-2">
+            <li *ngFor="let link of footerLinks.legal">
+              <a [href]="link.href" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {{ link.label }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 flex flex-col items-center justify-center gap-4 border-t border-primary/10 pt-8 md:flex-row md:justify-between">
+      <p class="text-center text-xs text-muted-foreground md:text-left">
+        Este site tem caráter meramente informativo e não constitui oferta de serviços jurídicos.
+      </p>
+      <div class="flex gap-4">
+        <a *ngFor="let social of socialLinks" [href]="social.href" class="rounded-full bg-primary/10 p-2 text-muted-foreground hover:text-primary transition-colors">
+          <svg *ngIf="social.icon === 'facebook'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+          <svg *ngIf="social.icon === 'instagram'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+          </svg>
+          <svg *ngIf="social.icon === 'linkedin'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span class="sr-only">{{ social.label }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
